@@ -15,7 +15,7 @@ const connectDB = async () => {
       bufferCommands: false, // Disable mongoose buffering
     };
 
-    const conn = await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://upkarsinghshb:oRcKXxWGFnQIEpyF@monkey-app.whg1qg3.mongodb.net/monkey-app", options);
+    const conn = await mongoose.connect(process.env.MONGODB_URI, options);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error('Database connection error:', error.message);
