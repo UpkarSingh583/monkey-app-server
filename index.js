@@ -13,7 +13,7 @@ dotenv.config();
 
 // Connect to database
 connectDB();
-const url = ['https://monkey-app-ashen.vercel.app'];
+const url = ['https://monkey-app-ashen.vercel.app', 'https://monkey-app-git-main-upkar-s-projects.vercel.app'];
 // const url = ['http://localhost:5173', 'http://localhost:3000'],;
 const app = express();
 const server = createServer(app);
