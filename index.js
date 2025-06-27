@@ -13,23 +13,20 @@ dotenv.config();
 
 // Connect to database
 connectDB();
-
+const url = ['https://monkey-app-ashen.vercel.app'];
+// const url = ['http://localhost:5173', 'http://localhost:3000'],;
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.NODE_ENV === 'production' 
-      ? ['https://monkey-app-ashen.vercel.app'] 
-      : ['http://localhost:5173', 'http://localhost:3000'],
+    origin: url,
     methods: ['GET', 'POST']
   }
 });
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://monkey-app-ashen.vercel.app'] 
-    : ['http://localhost:5173', 'http://localhost:3000'],
+  origin: url,
   credentials: true
 }));
 
